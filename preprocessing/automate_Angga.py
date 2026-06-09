@@ -1,15 +1,14 @@
 import pandas as pd
 import os
 
-# Membaca dataset mentah
+# Membaca dataset mentah yang ada di folder luar (satu tingkat di atas)
 df = pd.read_csv('WA_Fn-UseC_-Telco-Customer-Churn.csv')
 
-# --- CONTOH PROSES PREPROCESSING ---
-# 1. Drop baris yang kosong (misal)
+# Contoh preprocessing sederhana: drop baris yang kosong
 df = df.dropna()
 
-# 2. Simpan hasilnya menjadi data_siap_latih.csv
+# Menyimpan hasil ke folder preprocessing/data_siap_latih.csv
 output_path = 'preprocessing/data_siap_latih.csv'
 df.to_csv(output_path, index=False)
 
-print(f"Preprocessing selesai! File disimpan di: {output_path}")
+print(f"Berhasil! File {output_path} sudah dibuat.")
